@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Europe Map - Borders and Cities",
+  "name": "Simplest Map - Landmass",
   "sources": {
     "mapbox": {
       "type": "vector",
@@ -12,44 +12,19 @@
       "id": "background",
       "type": "background",
       "paint": {
-        "background-color": "#d8f0f9"
+        "background-color": "#87CEFA"  // Light blue for the sea
       }
     },
     {
-      "id": "country-borders",
-      "type": "line",
+      "id": "land",
+      "type": "fill",
       "source": "mapbox",
-      "source-layer": "admin",
-      "filter": ["==", "admin_level", 2],
-      "layout": {
-        "line-join": "round",
-        "line-cap": "round"
-      },
+      "source-layer": "land",
       "paint": {
-        "line-color": "#333333",
-        "line-width": 2
-      }
-    },
-    {
-      "id": "major-cities",
-      "type": "symbol",
-      "source": "mapbox",
-      "source-layer": "place_label",
-      "filter": ["==", "class", "city"],
-      "layout": {
-        "text-field": "{name_en}",
-        "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
-        "text-size": 12
-      },
-      "paint": {
-        "text-color": "#000000",
-        "text-halo-color": "#ffffff",
-        "text-halo-width": 1
+        "fill-color": "#D2B48C"  // Tan for land
       }
     }
   ],
-  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
-  "sprite": "mapbox://sprites/mapbox/streets-v8",
   "center": [10, 50],
   "zoom": 3
 }
