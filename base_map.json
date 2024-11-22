@@ -2,7 +2,7 @@
   "version": 8,
   "name": "Europe Map - Country Borders and Major Cities",
   "sources": {
-    "mapbox": {
+    "mapbox-streets": {
       "type": "vector",
       "url": "mapbox://mapbox.mapbox-streets-v8"
     }
@@ -18,7 +18,7 @@
     {
       "id": "country-borders",
       "type": "line",
-      "source": "mapbox",
+      "source": "mapbox-streets",
       "source-layer": "admin",
       "filter": ["all", ["==", "admin_level", 2], ["==", "maritime", 0]],
       "layout": {
@@ -33,7 +33,7 @@
     {
       "id": "major-cities",
       "type": "symbol",
-      "source": "mapbox",
+      "source": "mapbox-streets",
       "source-layer": "place_label",
       "filter": ["all", ["==", "class", "city"], ["<=", "scalerank", 2]],
       "layout": {
